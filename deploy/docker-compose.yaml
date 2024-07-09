@@ -1,97 +1,15 @@
-# version: '3.8'
+# docker-compose.yml
+
 
 services:
-  # svc1:
-  #   image: nginxdemos/hello:latest
-  #   ports:
-  #     - 8098:80
-
-  svc3:
-    image: ealen/echo-server:0.9.2
-    ports:
-      - 8099:80
-
-  # certbot:
-  #   image: certbot/certbot
-  #   container_name: certbot
-  #   volumes:
-  #     - ./certbot/conf:/etc/letsencrypt
-  #     - ./certbot/www:/var/www/certbot
-  #   command: certonly --webroot -w /var/www/certbot --force-renewal --email rossiblack@duck.com -d xyz.shikoku.co.jp --agree-tos
-
   nginx:
-    image: nginx:1.25.5
-    # container_name: nginxdev1
+    image: jonasal/nginx-certbot:3
     restart: unless-stopped
     environment:
-      - TZ=Asia/Taipei
+      - CERTBOT_EMAIL=rossiblack@duck.com
     ports:
       - 80:80
-      # - 443:443
+      - 443:443
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    #   - ./certbot/conf:/etc/letsencrypt
-    #   - ./certbot/www:/var/www/certbot
-    depends_on:
-      # - svc1
-      - svc2
-      - svc3
-      - svc4
-      - mongo
-      - mongo-express
-
-  mongo:
-    image: mongo:8.0-rc
-    restart: always
-    volumes:
-      - ./mongodata:/data/db
-    ports:
-      - 38018:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: hello_password
-    container_name: mongo-1
-
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - 8089:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
-      ME_CONFIG_MONGODB_ADMINPASSWORD: hello_password
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: hello_password
-      ME_CONFIG_MONGODB_URL: mongodb://admin:hello_password@mongo-1:27017/
-    depends_on:
-      - mongo
-    container_name: mongo-express-1
-
-  svc2:
-    image: tom4dock/shikoku-platform-api:0.0.1-src
-    restart: always
-    volumes:
-      - ../image/backend/app:/app/app
-      - ./info_images:/app/app/static/info_images
-    ports:
-      - 31244:80
-    environment:
-      MONGODB_URI: mongodb://admin:hello_password@mongo-1:27017/
-      DOCS_URL: /docs
-      OPENAPI_URL: /openapi.json
-      LOG_LEVEL: debug
-    depends_on:
-      - mongo
-    container_name: ctnsvc2
-
-  svc4:
-    image: tom4dock/skkui:latest
-    restart: always
-    volumes:
-      - ../image/frontend:/app
-    ports:
-      - 17281:3000
-    env_file:
-      - .env
-    command: yarn preview
-    container_name: ctnsvc4
+      - ./letsencrypt:/etc/letsencrypt
+      - ./user_conf.d:/etc/nginx/user_conf.d
