@@ -1,36 +1,24 @@
-# See https://help.github.com/articles/ignoring-files for more about ignoring files.
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
 
-# Dependencies
-node_modules/
-package-lock.json
-yarn-error.log
-
-# Production
-.build/
-.output/
-dist/
-.nuxt/
+# Node dependencies
+node_modules
 
 # Logs
-logs/
+logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# OS files
+# Misc
 .DS_Store
-Thumbs.db
+.fleet
+.idea
 
-# Nuxt3 specific
-.nuxt3/
-.nitro/
+# Local env files
+.env
+.env.*
+!.env.example
