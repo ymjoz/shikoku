@@ -1,23 +1,23 @@
 # Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Hola shikoku.
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
+# build docker image
+cd ~/shikoku/image/frontend
+docker build --network=host --force-rm -t tom4dock/skkui:latest - < dockerfile-dev
+docker run --rm -it \
+    --name skkui-dev-1 \
+    -v ~/shikoku/image/frontend:/app \
+    -p 17281:3000 \
+    tom4dock/skkui \
+    sh
 
-# pnpm
-pnpm install
 
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server

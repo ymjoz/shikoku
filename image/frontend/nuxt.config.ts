@@ -2,5 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  devServer: { port: 3005, host: '0.0.0.0' },
-})
+  // devServer: { port: 3005, host: '0.0.0.0' },
+  runtimeConfig: { apiURL: 'http://localhost:31244/v1' },
+},
+)

@@ -6,12 +6,6 @@
   <div>
     <!-- <NuxtRouteAnnouncer /> -->
     <!-- <NuxtWelcome /> -->
-    <h1>
-      Hello, Shikoku!
-    </h1>
-    <AppAlert>
-      <strong>Alert:</strong>
-      This is an alert!
-    </AppAlert>
+    <NuxtPage />
   </div>
 </template>

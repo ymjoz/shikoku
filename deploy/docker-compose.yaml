@@ -1,10 +1,10 @@
 # version: '3.8'
 
 services:
-  svc1:
-    image: nginxdemos/hello:latest
-    ports:
-      - 8098:80
+  # svc1:
+  #   image: nginxdemos/hello:latest
+  #   ports:
+  #     - 8098:80
 
   svc3:
     image: ealen/echo-server:0.9.2
@@ -33,12 +33,12 @@ services:
     #   - ./certbot/conf:/etc/letsencrypt
     #   - ./certbot/www:/var/www/certbot
     depends_on:
-      - svc1
+      # - svc1
       - svc2
       - svc3
+      - svc4
       - mongo
       - mongo-express
-      # - svcskkui
 
   mongo:
     image: mongo:8.0-rc
@@ -82,15 +82,16 @@ services:
       LOG_LEVEL: debug
     depends_on:
       - mongo
-    # container_name: ctnskkapi1
-    # svcskkui:
-    #   image: tom4dock/skk-ui-dev:latest
-    #   restart: always
-    #   volumes:
-    #     - ../image/frontend:/app
-    #   ports:
-    #     - 17281:3000
-    #   env_file:
-    #     - .env
-    #   command: yarn start
-    #   container_name: ctnskkui1
+    container_name: ctnsvc2
+
+  svc4:
+    image: tom4dock/skkui:latest
+    restart: always
+    volumes:
+      - ../image/frontend:/app
+    ports:
+      - 17281:3000
+    env_file:
+      - .env
+    command: yarn preview
+    container_name: ctnsvc4
