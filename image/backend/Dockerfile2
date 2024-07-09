@@ -10,8 +10,8 @@ RUN apt-get update --fix-missing && apt-get install -y \
   gcc
 
 # install cython & nuitka
-RUN pip install Cython==0.29.28
-RUN pip install nuitka==0.7
+RUN pip install Cython==3.0.10
+RUN pip install nuitka==2.3.11
 
 # 2. use builder to build binary code
 FROM cpython-builder AS build-stage
@@ -86,7 +86,7 @@ ENV LICENSE_MODE=${LICENSE_MODE}
 
 ENV DONGLE_LICENSE_SERVER_HOST=127.0.0.1
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Taipei
 
 # change timezone
@@ -106,22 +106,10 @@ COPY --from=build-stage /compilable-dir/app_build /app/app
 # upgrade pip
 RUN pip install --upgrade pip
 
-# begin: 安裝 Rust: 在hhkb3host上安裝時，不再需要安裝Rust..why?
-# 嘗試安裝 orjson 套件時，需要 Rust 和 Cargo 來編譯擴展，但是在系統中找不到 Rust 或 Cargo。這是因為 orjson 是用 Rust 語言寫的，並且需要 Rust 工具鏈來編譯。
-# 安裝 Rust 和 Cargo
-# RUN apt-get update && \
-#   apt-get install -y curl && \
-#   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
-#   . $HOME/.cargo/env && \
-#   rm -rf /var/lib/apt/lists/*
-
-# RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-# ENV PATH="/root/.cargo/bin:${PATH}"
-# end: 安裝 Rust
 
 
 # install python package
-RUN pip install -r install/requirements2.txt
+RUN pip install -r install/requirements.txt
 
 # install dongle driver
 RUN if [ "${LICENSE_MODE}" = "dongle" ] ; \
