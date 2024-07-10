@@ -3,7 +3,7 @@
 
 services:
   nginx:
-    image: jonasal/nginx-certbot:3
+    image: jonasal/nginx-certbot:5.2.1
     restart: unless-stopped
     environment:
       - CERTBOT_EMAIL=rossiblack@duck.com
@@ -19,12 +19,19 @@ services:
       - skkapisvc
       - skkuisvc
       - svc1
+      - svc2
   
   svc1:
    image: nginxdemos/hello:latest
    container_name: ctnsvc1
    ports: 
      - 8099:80
+  
+  svc2:
+    image: ealen/echo-server:0.9.2
+    container_name: ctnsvc2
+    ports:
+      - 8098:80
 
   mongo:
     image: mongo:8.0-rc
