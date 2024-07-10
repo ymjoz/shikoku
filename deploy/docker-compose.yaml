@@ -24,8 +24,8 @@ services:
   svc1:
    image: nginxdemos/hello:latest
    container_name: ctnsvc1
-   ports: 
-     - 8099:80
+   ports:
+      - 8099:80
   
   svc2:
     image: ealen/echo-server:0.9.2
