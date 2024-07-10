@@ -13,3 +13,21 @@ services:
     volumes:
       - ./letsencrypt:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
+  
+  svc1:
+   image: nginxdemos/hello:latest
+   container_name: ctnsvc1
+   ports: 
+     - 8099:80
+
+  # 前端docker部署
+  skkuisvc:
+    image: tom4dock/skkui:latest
+    restart: always
+    volumes:
+      - ../image/frontend:/app
+    command: yarn preview
+    ports:
+      - 17281:3000
+    env_file:
+      - .env

@@ -2,4 +2,3 @@ mongodata/
 info_images/
 certbot/
 letsencrypt/
-user_conf.d/
