@@ -8,8 +8,8 @@ services:
     environment:
       - CERTBOT_EMAIL=rossiblack@duck.com
       - RENEWAL_INTERVAL=7d # default is 8d, can use 60m or 1h or 1d
-      # - STAGING=1
-      # - DEBUG=1
+      - STAGING=1
+      - DEBUG=1
     ports:
       - 80:80
       - 443:443
