@@ -10,7 +10,7 @@
     <v-col cols="12" lg="4" md="5">
       <div class="pr-lg-4">
         <h1 class="bannerText my-5" data-aos="fade-up" data-aos-duration="500">
-          Shikoku Project With <span class="text-primary">YMJOZ</span>
+          Shikoku(四國) Project With <span class="text-primary">YMJOZ</span>
         </h1>
         <p class="mb-8" data-aos="fade-up" data-aos-duration="800">
           Berry is Vue3 based admin template which helps you to build faster and beautiful web applications.
