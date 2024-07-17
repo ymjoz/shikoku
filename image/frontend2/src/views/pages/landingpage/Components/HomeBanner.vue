@@ -10,11 +10,11 @@
     <v-col cols="12" lg="4" md="5">
       <div class="pr-lg-4">
         <h1 class="bannerText my-5" data-aos="fade-up" data-aos-duration="500">
-          Shikoku(四國) Project With <span class="text-primary">YMJOZ</span>
+          Shikoku(四國) With <span class="text-primary">YMJOZ</span>
         </h1>
         <p class="mb-8" data-aos="fade-up" data-aos-duration="800">
-          Berry is Vue3 based admin template which helps you to build faster and beautiful web applications.
-          這裡是繁體中文字。
+          在行政區劃上劃分為香川、德島、高知、愛媛等4縣。
+          四國本島和其附近的小豆島、大三島、大島、中島、伯方島、豐島等島嶼共同組成四國地方。
         </p>
         <div data-aos="fade-up" data-aos-duration="1000">
           <v-btn color="secondary" size="large" class="mr-2" to="/dashboard/default">Live Preview</v-btn>
