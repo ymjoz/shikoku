@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       - CERTBOT_EMAIL=rossiblack@duck.com
-      - RENEWAL_INTERVAL=1h # default is 8d, can use 60m or 1h or 1d
+      - RENEWAL_INTERVAL=7d # default is 8d, can use 60m or 1h or 1d
       # - STAGING=1
       # - DEBUG=1
     ports:
@@ -23,6 +23,7 @@ services:
       - skkuisvc
       - svc1
       - svc2
+      - berryuisvc
   
   svc1:
    image: nginxdemos/hello:latest
@@ -86,6 +87,21 @@ services:
     command: yarn preview
     ports:
       - 17281:3000
+    env_file:
+      - .env
+    depends_on:
+      - skkapisvc
+  
+  
+  # 前端docker部署
+  berryuisvc:
+    image: tom4dock/berryui:latest
+    restart: always
+    volumes:
+      - ../image/frontend2:/app
+    command: yarn preview
+    ports:
+      - 17282:5050
     env_file:
       - .env
     depends_on:
