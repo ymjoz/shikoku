@@ -13,16 +13,19 @@
           <v-col md="6" cols="12" class="text-center text-md-right">
             <ul class="d-flex justify-center justify-md-end gap-4 customlink align-center">
               <li>
+                <a href="https://www.youtube.com/@minkoder" target="_blank"><v-icon
+                    class="mr-2">mdi-youtube</v-icon>Youtube</a>
+              </li>
+              <li>
                 <a href="https://blog.berrydashboard.io/" target="_blank"><v-icon
                     class="mr-2">mdi-instagram</v-icon>Blog</a>
               </li>
               <li>
-                <a href="https://www.facebook.com/codedthemes" target="_blank"><v-icon
+                <a href="https://www.facebook.com/chen.s.wei" target="_blank"><v-icon
                     class="mr-2">mdi-facebook</v-icon>Facebook</a>
               </li>
               <li>
-                <a href="https://twitter.com/codedthemes" target="_blank"><v-icon
-                    class="mr-2">mdi-twitter</v-icon>Twitter</a>
+                <a href="https://x.com/CswOz" target="_blank"><v-icon class="mr-2">mdi-twitter</v-icon>Twitter</a>
               </li>
             </ul>
           </v-col>
