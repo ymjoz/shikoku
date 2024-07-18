@@ -4,13 +4,14 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --host",
+    "dev": "nuxt dev --port 3001 --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview --host",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "nuxt": "^3.12.3",
-    "vue": "latest"
+    "vue": "latest",
+    "vuetify": "^3.6.13"
   }
 }

@@ -13,7 +13,7 @@ docker build --network=host --force-rm -t tom4dock/skkui:latest - < dockerfile-d
 docker run --rm -it \
     --name skkui-dev-1 \
     -v ~/shikoku/image/frontend:/app \
-    -p 17281:3000 \
+    -p 17281:3001 \
     tom4dock/skkui \
     sh
 
