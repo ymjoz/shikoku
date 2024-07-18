@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import LogoLight from '@/assets/images/landing/logo-white.svg';
+  import YMJOZ from '@/assets/images/landing/ymjoz-white.svg';
+  import YMJOZninja from '@/assets/images/landing/ymjoz-ninja.svg';
 </script>
 
 <template>
@@ -8,7 +10,9 @@
       <v-container class="maxWidth">
         <v-row class="align-center text-center text-md-left">
           <v-col md="6" cols="12" class="my-3">
-            <img :src="LogoLight" alt="logo" />
+            <!-- <img :src="LogoLight" alt="logo" /> -->
+            <!-- <img :src="YMJOZ" alt="logo" /> -->
+            <img :src="YMJOZninja" alt="logo" />
           </v-col>
           <v-col md="6" cols="12" class="text-center text-md-right">
             <ul class="d-flex justify-center justify-md-end gap-4 customlink align-center">

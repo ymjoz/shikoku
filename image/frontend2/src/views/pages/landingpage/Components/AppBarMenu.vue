@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import Logo from '@/layouts/full/logo/LogoMain.vue';
-import { useDisplay } from 'vuetify';
-import { HomeIcon } from 'vue-tabler-icons';
+  import { ref } from 'vue';
+  import Logo from '@/layouts/full/logo/LogoMain.vue';
+  import { useDisplay } from 'vuetify';
+  import { HomeIcon } from 'vue-tabler-icons';
 
-const { mdAndUp } = useDisplay();
-const drawer = ref(false);
+  const { mdAndUp } = useDisplay();
+  const drawer = ref(false);
 </script>
 
 <template>
@@ -22,9 +22,8 @@ const drawer = ref(false);
           <v-btn variant="text" color="primary" to="/">Home</v-btn>
           <v-btn variant="text" to="/dashboard/default">Dashboard</v-btn>
           <v-btn variant="text" href="https://codedthemes.gitbook.io/berry-vuetify/">Documentation</v-btn>
-          <v-btn variant="flat" color="secondary" target="_" href="https://store.vuetifyjs.com/products/berry-vuetify-admin-template"
-            >Purchase Now</v-btn
-          >
+          <v-btn variant="flat" color="secondary" target="_"
+            href="https://store.vuetifyjs.com/products/berry-vuetify-admin-template">Purchase Now</v-btn>
         </template>
         <template v-else>
           <v-btn color="lightsecondary" icon rounded="sm" variant="flat" size="small" @click="drawer = true">
@@ -63,9 +62,8 @@ const drawer = ref(false);
           <CreditCardIcon size="20" stroke-width="1.5px" />
         </template>
 
-        <v-list-item-title class="ml-3" to="https://store.vuetifyjs.com/products/berry-vuetify-admin-template"
-          >Purchase Now</v-list-item-title
-        >
+        <v-list-item-title class="ml-3" to="https://store.vuetifyjs.com/products/berry-vuetify-admin-template">Purchase
+          Now</v-list-item-title>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
