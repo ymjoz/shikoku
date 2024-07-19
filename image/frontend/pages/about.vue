@@ -1,9 +1,19 @@
 <template>
-  <section>
-    <p>
-      This is a page about us.
-    </p>
-  </section>
+  <div>
+    <!-- <section>
+      <p>
+        This is a page about us.
+      </p>
+    </section> -->
+    <div>
+      <p>
+        hello About.
+      </p>
+      <NuxtLink to="/" class="gold-link">Home</NuxtLink>
+    </div>
+
+  </div>
+
 </template>
 
 

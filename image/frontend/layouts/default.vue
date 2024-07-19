@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>伊米塔default layout</p>
+    <header>My SKK App</header>
     <slot />
   </div>
 

@@ -29,6 +29,11 @@
     color: rgb(234, 205, 103);
   }
 
+  .gold-link {
+    color: gold;
+    font-size: 1.2em;
+  }
+
   #app {
     width: 100vw;
     height: 100vh;
