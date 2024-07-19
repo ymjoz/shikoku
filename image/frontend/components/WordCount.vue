@@ -1,7 +1,8 @@
 <template>
   <div>
     <p>Word Count 🇺🇸 vs 🇯🇵</p>
-    <input v-model="wordCount" type="text" />
+    <!-- <input v-model="countWords" type="text" /> -->
+    <textarea v-model="countWords"></textarea>
     <p>輸入了 {{ count }} 個字</p>
   </div>
 </template>
@@ -11,13 +12,13 @@
     name: 'WordCountVue',
     data() {
       return {
-        wordCount: '',
+        countWords: '',
         test: 'Shikoku-Island'
       }
     },
     computed: {
       count() {
-        return this.wordCount.length
+        return this.countWords.length
       }
     },
   }
@@ -33,6 +34,16 @@
     outline: none;
     background: hsl(280deg, 50%, 30%, 0.2);
     color: rgb(244, 242, 238);
+  }
+
+  textarea {
+    padding: 8px 14px;
+    border: 1px solid hsl(280deg, 50%, 50%);
+    border-radius: 4px;
+    outline: none;
+    background: hsl(280deg, 50%, 30%, 0.2);
+    color: rgb(244, 242, 238);
+    height: 110px;
   }
 
   p {

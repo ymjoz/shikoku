@@ -10,7 +10,13 @@
 <style scoped>
 
   p {
-    font: 4em sans-serif;
+    font: 2.8em sans-serif;
     font-family: Helvetica, Arial, sans-serif;
   }
 </style>
+
+<script setup lang="ts">
+  definePageMeta({
+    layout: 'skk-base-layout',
+  })
+</script>
