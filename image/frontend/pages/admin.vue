@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Admin Dashboard(IT God)</h1>
-    <NuxtLink to="/" class="gold-link">Home</NuxtLink>
   </div>
 </template>
 

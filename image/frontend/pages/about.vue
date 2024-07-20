@@ -9,7 +9,6 @@
       <p>
         hello About.
       </p>
-      <NuxtLink to="/" class="gold-link">Home</NuxtLink>
     </div>
 
   </div>

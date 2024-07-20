@@ -1,9 +1,11 @@
 <template>
   <div>
     <h1>Index Page</h1>
-
-    <NuxtLink to="/about" class="gold-link">About</NuxtLink>
-    <NuxtLink to="/admin" class="gold-link">Admin</NuxtLink>
+    <!-- <nav>
+      <NuxtLink to="/about" class="gold-link">About</NuxtLink>
+      <NuxtLink to="/admin" class="gold-link">Admin</NuxtLink>
+      <NuxtLink to="/budapest/buda" class="gold-link">Buda</NuxtLink>
+    </nav> -->
     <WordCount />
     <!-- <AppAlert>
       <p>
