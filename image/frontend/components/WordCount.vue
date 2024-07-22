@@ -12,7 +12,7 @@
     name: 'WordCountVue',
     data() {
       return {
-        countWords: '',
+        countWords: '四國是日本四大本土島嶼之一',
         test: 'Shikoku-Island'
       }
     },

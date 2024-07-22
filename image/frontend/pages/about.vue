@@ -1,13 +1,11 @@
 <template>
   <div>
-    <!-- <section>
-      <p>
-        This is a page about us.
-      </p>
-    </section> -->
     <div>
       <p>
         hello About.
+      </p>
+      <p>
+        {{ foo }}
       </p>
     </div>
 
@@ -28,4 +26,7 @@
   definePageMeta({
     layout: 'skk-base-layout',
   })
+
+  const foo = useFoo()
+
 </script>
