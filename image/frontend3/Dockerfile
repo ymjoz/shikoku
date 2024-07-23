@@ -1,13 +1,14 @@
 FROM node:lts
 
+# COPY package.json /app/package.json
 COPY . /app
 WORKDIR /app
 
 RUN npm install -g pnpm
 
 RUN pnpm install
-RUN pnpm build
 RUN pnpm generate
-RUN pnpm preview
+RUN pnpm build
+# RUN pnpm preview
 
-CMD pnpm start
+CMD ["pnpm", "start"]
