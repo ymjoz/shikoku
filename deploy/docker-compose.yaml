@@ -1,6 +1,5 @@
 # docker-compose.yml
 
-
 services:
   nginx:
     image: jonasal/nginx-certbot:5.2.1
@@ -24,13 +23,14 @@ services:
       - svc1
       - svc2
       - berryuisvc
-  
+      - shikokuuisvc
+
   svc1:
-   image: nginxdemos/hello:latest
-   container_name: ctnsvc1
-   ports:
+    image: nginxdemos/hello:latest
+    container_name: ctnsvc1
+    ports:
       - 8099:80
-  
+
   svc2:
     image: ealen/echo-server:0.9.2
     container_name: ctnsvc2
@@ -63,7 +63,7 @@ services:
       - mongo
 
   skkapisvc:
-    image: tom4dock/shikoku-platform-api:0.0.1-src 
+    image: tom4dock/shikoku-platform-api:0.0.1-src
     restart: always
     volumes:
       - ./info_images:/app/app/static/info_images
@@ -91,8 +91,7 @@ services:
       - .env
     depends_on:
       - skkapisvc
-  
-  
+
   # 前端docker部署
   berryuisvc:
     image: tom4dock/berryui:latest
@@ -102,6 +101,21 @@ services:
     command: yarn preview
     ports:
       - 17282:5050
+    env_file:
+      - .env
+    depends_on:
+      - skkapisvc
+
+  # 前端docker部署
+  shikokuuisvc:
+    image: tom4dock/shikokuui:latest
+    restart: always
+    volumes:
+      - ../image/frontend3:/app
+    # command: pnpm preview
+    command: pnpm start
+    ports:
+      - 17283:3000
     env_file:
       - .env
     depends_on:
