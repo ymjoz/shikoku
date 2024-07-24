@@ -9,6 +9,10 @@
 # build docker image
 cd ~/shikoku/image/frontend3
 docker build --network=host --force-rm -t tom4dock/shikokuui:latest - < dockerfile-dev
+
+docker build --network=host --force-rm -t tom4dock/shikokuui-img:0.0.6 -f - . < Dockerfile
+docker build --network=host --force-rm -t tom4dock/shikokuui-img:0.0.5 . 
+
 docker run --rm -it \
     --name shikokuui-dev-1 \
     -v ~/shikoku/image/frontend3:/app \
@@ -16,6 +20,57 @@ docker run --rm -it \
     tom4dock/shikokuui \
     sh
 
+
+```
+## build docker image process
+```
+❯ docker build --network=host --force-rm -t tom4dock/shikokuui-img:0.0.5 .
+[+] Building 277.4s (12/12) FINISHED                                                 docker:default
+ => [internal] load build definition from Dockerfile                                           0.0s
+ => => transferring dockerfile: 353B                                                           0.0s
+ => [internal] load metadata for docker.io/library/node:lts                                    1.1s
+ => [internal] load .dockerignore                                                              0.0s
+ => => transferring context: 2B                                                                0.0s
+ => [1/7] FROM docker.io/library/node:lts@sha256:6326b52a508f0d99ffdbfaa29a69380321b215153db6  0.0s
+ => => resolve docker.io/library/node:lts@sha256:6326b52a508f0d99ffdbfaa29a69380321b215153db6  0.0s
+ => [internal] load build context                                                              5.5s
+ => => transferring context: 61.77MB                                                           5.4s
+ => CACHED [2/7] WORKDIR /app                                                                  0.0s
+ => CACHED [3/7] RUN npm install -g pnpm                                                       0.0s
+ => [4/7] COPY . /app                                                                         18.1s
+ => [5/7] RUN pnpm install                                                                     1.0s
+ => [6/7] RUN pnpm generate                                                                   71.8s
+ => [7/7] RUN pnpm build                                                                     152.8s 
+ => exporting to image                                                                        26.9s 
+ => => exporting layers                                                                       26.9s 
+ => => writing image sha256:cc6f19da81c047cd9415bb0ac4f2683c05c4759cd6de8e9d64847bc57b1034de   0.0s 
+ => => naming to docker.io/tom4dock/shikokuui-img:0.0.5                                        0.0s
+
+```
+
+## 用標準輸入傳遞 Dockerfile，應同時指定構建上下文
+```
+docker build --network=host --force-rm -t tom4dock/shikokuui-img:0.0.6 -f - . < Dockerfile
+[+] Building 289.5s (12/12) FINISHED                                                                                         docker:default
+ => [internal] load build definition from Dockerfile                                                                                   0.0s
+ => => transferring dockerfile: 353B                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/node:lts                                                                            0.5s
+ => [internal] load .dockerignore                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                        0.0s
+ => [1/7] FROM docker.io/library/node:lts@sha256:6326b52a508f0d99ffdbfaa29a69380321b215153db6f32974835bac71b38fa4                      0.0s
+ => => resolve docker.io/library/node:lts@sha256:6326b52a508f0d99ffdbfaa29a69380321b215153db6f32974835bac71b38fa4                      0.0s
+ => [internal] load build context                                                                                                      4.2s
+ => => transferring context: 9.22MB                                                                                                    4.1s
+ => CACHED [2/7] WORKDIR /app                                                                                                          0.0s
+ => CACHED [3/7] RUN npm install -g pnpm                                                                                               0.0s
+ => [4/7] COPY . /app                                                                                                                 27.6s
+ => [5/7] RUN pnpm install                                                                                                             1.0s
+ => [6/7] RUN pnpm generate                                                                                                           71.4s
+ => [7/7] RUN pnpm build                                                                                                             157.4s 
+ => exporting to image                                                                                                                27.1s 
+ => => exporting layers                                                                                                               27.1s 
+ => => writing image sha256:943cc490c0cd8eb06a4d5f65e25284f79525d7d496c4fae470e305e5931aa384                                           0.0s 
+ => => naming to docker.io/tom4dock/shikokuui-img:0.0.6        
 
 ```
 
