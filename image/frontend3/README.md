@@ -49,6 +49,7 @@ docker run --rm -it \
 ```
 
 ## 用標準輸入傳遞 Dockerfile，應同時指定構建上下文
+### 以下docker cli的意思: 使用當前目錄作為構建上下文，並通過標準輸入提供 Dockerfile
 ```
 docker build --network=host --force-rm -t tom4dock/shikokuui-img:0.0.6 -f - . < Dockerfile
 [+] Building 289.5s (12/12) FINISHED                                                                                         docker:default
