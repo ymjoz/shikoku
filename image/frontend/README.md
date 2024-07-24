@@ -10,6 +10,7 @@ Make sure to install the dependencies:
 # build docker image
 cd ~/shikoku/image/frontend
 docker build --network=host --force-rm -t tom4dock/skkui:latest - < dockerfile-dev
+docker build --network=host --force-rm -t tom4dock/skkui-img:0.0.1 -f - . < Dockerfile            
 docker run --rm -it \
     --name skkui-dev-1 \
     -v ~/shikoku/image/frontend:/app \
