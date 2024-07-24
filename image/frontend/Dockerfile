@@ -1,10 +1,12 @@
 FROM node:lts
 
-COPY . /app
 WORKDIR /app
 
+COPY . /app
 
 RUN yarn install
-RUN yarn build
+
 RUN yarn generate
-CMD yarn start
+RUN yarn build
+
+CMD ["yarn", "preview"]

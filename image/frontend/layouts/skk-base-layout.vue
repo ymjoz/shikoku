@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>伊米塔 shikoku-base-layout</p>
+    <p>凱米颱風 shikoku-base-layout</p>
     <nav>
       <NuxtLink to="/" class="gold-link">Home</NuxtLink>
       <NuxtLink to="/about" class="gold-link">About</NuxtLink>

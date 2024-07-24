@@ -1,8 +1,8 @@
 FROM node:lts
 
-COPY package.json /app/package.json
-COPY . /app
 WORKDIR /app
+
+COPY . /app
 
 RUN yarn install
 # RUN yarn generate

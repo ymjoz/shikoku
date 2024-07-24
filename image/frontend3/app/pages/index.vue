@@ -1,10 +1,11 @@
 <script setup lang='ts'>
-import AdvertiseBox from '@/components/AdvertiseBox.vue'
+  import AdvertiseBox from '@/components/AdvertiseBox.vue'
 </script>
 
 <template>
   <div class="surface-0 text-center">
     <div class="mb-3 font-bold text-4xl">
+      <span class="text-purple-600">花蓮隊長 & </span>
       <span class="text-green-600">PrimeVue </span>
       <span class="text-blue-400"> & TypeScript</span>
       <span class="text-green-400"> & Nuxt 3</span>
@@ -14,13 +15,15 @@ import AdvertiseBox from '@/components/AdvertiseBox.vue'
     </h2>
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
       <AdvertiseBox header="PrimeVue 4.x" icon="prime-check-circle" color="green-600">
-        Excellent <ExternalLink href="https://github.com/sfxcode/formkit-primevue" text="Component Library" /> for VUE
+        Excellent
+        <ExternalLink href="https://github.com/sfxcode/formkit-primevue" text="Component Library" /> for VUE
       </AdvertiseBox>
       <AdvertiseBox header="PrimeVue Theme" icon="prime-check-circle" color="green-600">
         <ExternalLink href="https://primevue.org/theming/styled" text="Styled Mode" /> with preset: Aura
       </AdvertiseBox>
       <AdvertiseBox header="FormKit" icon="prime-check-circle" color="purple-500">
-        <ExternalLink href="https://formkit.com" text="Formkit" /> 1.6.x support by <ExternalLink href="https://formkit-primevue.netlify.app/" text="PrimeVue-FormKit" />
+        <ExternalLink href="https://formkit.com" text="Formkit" /> 1.6.x support by
+        <ExternalLink href="https://formkit-primevue.netlify.app/" text="PrimeVue-FormKit" />
       </AdvertiseBox>
       <AdvertiseBox header="UnoCSS" icon="prime-check-circle" color="green-600">
         <ExternalLink href="https://unocss.dev/" text="UnoCSS" /> for rapid styling
@@ -38,7 +41,9 @@ import AdvertiseBox from '@/components/AdvertiseBox.vue'
         <ExternalLink href="https://content.nuxt.com/" text="Content" />: Markdown, YML, CSV or JSON and MDC Syntax
       </AdvertiseBox>
       <AdvertiseBox header="Nuxt Modules" icon="prime-check-circle" color="green-600">
-        includes <ExternalLink href="https://nuxt.com/modules/image" text="Nuxt Images" />, <ExternalLink href="https://nuxt.com/modules/fonts" text="Nuxt Fonts" />
+        includes
+        <ExternalLink href="https://nuxt.com/modules/image" text="Nuxt Images" />,
+        <ExternalLink href="https://nuxt.com/modules/fonts" text="Nuxt Fonts" />
       </AdvertiseBox>
       <AdvertiseBox header="VueUse" icon="prime-check-circle" color="green-600">
         <ExternalLink href="https://vueuse.org/" text="VueUse" /> included

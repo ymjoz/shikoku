@@ -4,6 +4,9 @@
     <p>
       default layout
     </p>
+    <p>
+      凱米颱風 快閃
+    </p>
     <nav>
       <NuxtLink to="/" class="gold-link">Home</NuxtLink>
       <NuxtLink to="/about" class="gold-link">About</NuxtLink>
