@@ -13,6 +13,9 @@
     <h2 class="text-2xl pb-6">
       Starter for Vue.js Development with Nuxt 3.
     </h2>
+    <h2 class="text-2xl pb-6">
+      陳詩偉の小站
+    </h2>
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
       <AdvertiseBox header="PrimeVue 4.x" icon="prime-check-circle" color="green-600">
         Excellent
