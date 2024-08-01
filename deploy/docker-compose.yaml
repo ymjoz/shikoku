@@ -84,7 +84,7 @@ services:
     restart: always
     volumes:
       - ../image/frontend:/app
-    command: yarn preview
+    command: yarn start
     ports:
       - 17281:3000
     env_file:

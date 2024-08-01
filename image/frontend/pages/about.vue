@@ -2,7 +2,7 @@
   <div>
     <div>
       <p>
-        hello About.
+        hola About.
       </p>
       <p>
         {{ foo }}
