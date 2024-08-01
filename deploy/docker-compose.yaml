@@ -24,6 +24,7 @@ services:
       - svc2
       - berryuisvc
       - shikokuuisvc
+      - minorsvc
 
   svc1:
     image: nginxdemos/hello:latest
@@ -120,3 +121,13 @@ services:
       - .env
     depends_on:
       - skkapisvc
+
+  # minor service
+  minorsvc:
+    image: nginx:alpine
+    container_name: ctnsvc4
+    ports:
+      - 8097:80
+    volumes:
+      - ../image/frontend4:/usr/share/nginx/html
+    restart: always
