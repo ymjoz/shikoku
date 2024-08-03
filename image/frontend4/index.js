@@ -1,4 +1,6 @@
-const playList = {
+
+const app = Vue.createApp({
+
   data() {
     return {
       rossiValue: 100,
@@ -32,6 +34,9 @@ const playList = {
       return this.rossiValue;
     },
   },
-};
 
-Vue.createApp(playList).mount('#app');
+})
+
+
+app.mount('#app');
+
