@@ -33,6 +33,12 @@ const app = Vue.createApp({
         'Canon in D Major',
         '好口唄',
       ],
+      todos: [
+        { id: 1, content: '看賈伯斯傳', complete: true },
+        { id: 2, content: 'Buy eggs', complete: false },
+        { id: 3, content: 'Buy bread', complete: true },
+        { id: 4, content: '把項目做完', complete: false },
+      ],
       searchTerm: '',
     };
   },

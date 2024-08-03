@@ -58,3 +58,11 @@ body {
 #app ul li {
   margin-bottom: 24px;
 }
+
+#app li input {
+  margin-right: 24px;
+  line-height: 2em;
+  width: 24px;
+  height: 24px;
+}
+

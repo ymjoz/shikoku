@@ -11,6 +11,13 @@
   <div id="app">
     <h2>hello, 好口貝</h2>
     <a :href="urltotwogirls">好口貝?!</a>
+    <br>
+    <br>
+    <ul>
+      <li v-for="todo in todos">
+       <input type="checkbox" :checked="todo.complete">{{ todo.content }} 
+      </li>
+    </ul>
   </div>
   <script src="index.js"></script>
 </body>
