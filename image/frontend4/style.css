@@ -28,6 +28,12 @@ body {
   font-weight: 500;
 }
 
+#app h3 {
+  font-size: 14px;
+  color: #425066;
+  font-weight: 500;
+}
+
 .search {
   width: 100%;
   background: #f8f8f8;
