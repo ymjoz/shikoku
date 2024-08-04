@@ -59,6 +59,12 @@ body {
   margin-bottom: 24px;
 }
 
+/* #app li {
+  line-height: 2em;
+  font-size: 20px;
+} */
+
+
 #app li input {
   margin-right: 24px;
   line-height: 2em;
