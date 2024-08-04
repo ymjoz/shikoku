@@ -39,6 +39,19 @@ const app = Vue.createApp({
         { id: 3, content: 'Buy bread', complete: true },
         { id: 4, content: '把項目做完', complete: false },
       ],
+      // books: [
+      //   '賈伯斯傳',
+      //   '芬蘭驚艷',
+      //   '蘇菲的世界',
+      //   'JavaScript高級程序設計',
+      // ],
+      books: [
+        { id: 1, title: '賈伯斯傳', price: 100 },
+        { id: 2, title: '芬蘭驚艷', price: 100 },
+        { id: 3, title: '蘇菲的世界', price: 100 },
+        { id: 4, title: 'JavaScript高級程序設計', price: 100 },
+      ],
+      
       searchTerm: '',
     };
   },

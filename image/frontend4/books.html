@@ -5,25 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3"></script>
-  <title>vue</title>
+  <title>Books</title>
 </head>
 <body>
   <div id="app">
-    <!-- <h1>Hola Vue!</h1> -->
-    <h2>陳詩偉の小站 {{ rossiValue }} </h2>
+    <h2>
+      <a href="index.html">陳詩偉の小站 - {{ rossiValue }}</a>
+    </h2>
+    <p>test v-if 語法</p>
     <br>
-    <ul>
-      <li>
-        <a href="basic.html">BASIC</a>
-      </li>
-      <li>
-        <a href="bgm.html">BGM</a>
-      </li>
-      <li>
-        <a href="books.html">BOOKS</a>
-      </li>
-      <li></li>
-      <li></li>
+    <p v-if="books.length === 0">no books</p>
+    <h2 v-else-if="books.length == 1">{{ books[0].title }}</h2>
+    <ul v-else>
+      <li v-for="book in books">{{ book.title }} </li>
     </ul>
   </div>
   <script src="index.js"></script>
