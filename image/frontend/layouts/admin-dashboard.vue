@@ -2,11 +2,11 @@
   <div>
     <p>admin dashboard layout</p>
     <nav>
-      <NuxtLink to="/" class="gold-link">Home</NuxtLink>
-      <NuxtLink to="/about" class="gold-link">About</NuxtLink>
-      <NuxtLink to="/admin" class="gold-link">Admin</NuxtLink>
-      <NuxtLink to="/budapest/buda" class="gold-link">Buda</NuxtLink>
-      <!-- <NuxtLink to="/budapest/pest" class="gold-link">Pest</NuxtLink> -->
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/about">About</NuxtLink>
+      <NuxtLink to="/admin">Admin</NuxtLink>
+      <NuxtLink to="/budapest/buda">Buda</NuxtLink>
+      <!-- <NuxtLink to="/budapest/pest">Pest</NuxtLink> -->
     </nav>
     <slot />
   </div>
