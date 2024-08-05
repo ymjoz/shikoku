@@ -17,7 +17,7 @@ const app = Vue.createApp({
 
   data() {
     return {
-      // rossiValue: '好口貝。雙子女@@',
+      showAnswer: false,
       rossiValue: getRandomNumber(8),
       urltotwogirls: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
       // playlist: ['命運交響曲', '小夜曲', 'Blinding Lights', 'Shape of You', 'Cello Suite No. 1 in G Major, BWV 1007', 'Clair de Lune', ],
@@ -67,8 +67,8 @@ const app = Vue.createApp({
         return [];
       }
     },
-    testFunc() {
-      return this.rossiValue;
+    toggleAnswerVisibility() {
+      return this.showAnswer ? 'Hide Answer' : 'Show Answer';
     },
   },
 

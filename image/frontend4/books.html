@@ -19,6 +19,12 @@
     <ul v-else>
       <li v-for="book in books">{{ book.title }} </li>
     </ul>
+    <br>
+    <p>好口唄是誰?</p>
+    <button @click="showAnswer = !showAnswer">{{ toggleAnswerVisibility }}</button>
+    <p v-show="showAnswer">
+      ANS: 尾道市
+    </p>
   </div>
   <script src="index.js"></script>
 </body>
