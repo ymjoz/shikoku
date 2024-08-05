@@ -17,6 +17,7 @@ const app = Vue.createApp({
 
   data() {
     return {
+      currentCount: 0,
       countDown: 5,
       timer: null,
       showAnswer: false,
@@ -53,12 +54,25 @@ const app = Vue.createApp({
         { id: 3, title: '蘇菲的世界', price: 100 },
         { id: 4, title: 'JavaScript高級程序設計', price: 100 },
       ],
+      blogPosts: [
+         'Vue 3.1 正式版发布',
+         'Vue 3.3 beta版发布',
+         'Vue 2.x vs Vue 3.x', 
+         'Nodejs 18x 開發', 
+         'React 18 正式版发布'
+      ],
+      
       
       searchTerm: '',
     };
   },
 
-  computed: {
+computed: {
+    vueBlogs() {
+      console.log('調用了vueBlogs計算屬性');
+      return this.blogPosts.filter((post) => post.toLowerCase().includes('vue'));
+
+    },
     filteredPlaylist() {
       if (this.searchTerm) {
         return this.playlist.filter((song) => {
@@ -77,6 +91,11 @@ const app = Vue.createApp({
   methods: {
     toggleAnswer() {
       this.showAnswer = !this.showAnswer;
+    },
+    getVueBlogs() {
+      // 每次click button都會執行
+      console.log('getVueBlogs被調用');
+      return this.blogPosts.filter((post) => post.toLowerCase().includes('react'));
     }
   },
 
