@@ -17,6 +17,8 @@ const app = Vue.createApp({
 
   data() {
     return {
+      countDown: 5,
+      timer: null,
       showAnswer: false,
       rossiValue: getRandomNumber(8),
       urltotwogirls: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
@@ -68,9 +70,35 @@ const app = Vue.createApp({
       }
     },
     toggleAnswerVisibility() {
-      return this.showAnswer ? 'Hide Answer' : 'Show Answer';
+      return this.showAnswer ? 'Hide Answer ' + this.countDown : 'Show Answer';
     },
   },
+
+  methods: {
+    toggleAnswer() {
+      this.showAnswer = !this.showAnswer;
+    }
+  },
+
+  watch: {
+    showAnswer(newVal, oldVal) {
+      if (newVal) {
+        this.countDown = 5;
+        if (this.timer) {
+          clearInterval(this.timer);
+          this.timer = null;
+        }
+        this.timer = setInterval(() => {
+          this.countDown -= 1;
+          if (this.countDown === 0) {
+            this.showAnswer = false;
+            clearInterval(this.timer);
+            this.timer = null;
+          }
+        }, 1000);
+      }
+    }
+  }
 
 })
 

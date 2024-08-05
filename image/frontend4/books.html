@@ -20,12 +20,15 @@
       <li v-for="book in books">{{ book.title }} </li>
     </ul>
     <br>
+    <div class="question">
     <p>好口唄是誰?</p>
-    <button @click="showAnswer = !showAnswer">{{ toggleAnswerVisibility }}</button>
-    <p v-show="showAnswer">
-      ANS: 尾道市
+    <button @click="toggleAnswer">{{ toggleAnswerVisibility }}</button>
+    <p v-show="showAnswer" class="answer">
+      ANS: 我哪知道，尾道市!?
     </p>
-  </div>
+ 
+    </div>
+ </div>
   <script src="index.js"></script>
 </body>
 </html>
