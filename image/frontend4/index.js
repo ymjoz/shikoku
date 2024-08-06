@@ -66,6 +66,9 @@ const app = Vue.createApp({
         //  'Nodejs 18x 開發', 
          'React 16.8 正式版发布',
       ],
+      mylists: [
+        1, 2, 3
+      ],
       
       
       searchTerm: '',
@@ -111,6 +114,9 @@ const app = Vue.createApp({
   },
 
   methods: {
+    addmylists() {
+      this.mylists.push(this.mylists.length + 1);
+    },
     handleSubmit(e) {
       // e.preventDefault();
       console.log('Submitted!');

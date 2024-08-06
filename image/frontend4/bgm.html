@@ -23,6 +23,16 @@
        <input type="checkbox" :checked="todo.complete">{{ todo.content }} 
       </li>
     </ul>
+    <hr>
+    <div>
+      <p v-once>
+        初始長度: {{ mylists.length }}
+      </p>
+      <p>
+        mylists 長度: {{ mylists.length }}
+      </p>
+      <button @click="addmylists">add 1</button>
+    </div>
   </div>
   <script src="index.js"></script>
 </body>
