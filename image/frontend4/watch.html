@@ -17,13 +17,13 @@
   <ul>
     <li v-for="blog in blogPosts">{{ blog }}</li>
   </ul>
-  <h2>共 ({{ blogsCount }}) 篇blogs</h2>
+  <h2>共 ({{ getBlogsCount }}) 篇blogs</h2>
   <div class="question">
     <!-- <button @click="blogPosts.push('new vue framework: Nuxt3 test')">add one more blog</button> -->
-     <button @click="newBlog = 'New Vue3.x' ">加一篇新blog</button>
+     <button @click="handleButtonClick">加一篇新blog</button>
      <br>
      <p>
-       {{ newBlog }}
+       {{ newBlogPost }}
      </p>
   </div>
  </div> 

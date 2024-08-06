@@ -17,8 +17,11 @@ const app = Vue.createApp({
 
   data() {
     return {
+      userName: "",
+      userEmail: "",
       newBlog: "", // 使用watch監聽
-      blogsCount: 4,
+      newBlogPost: "",
+      blogsCount: 0,
       currentCount: 0,
       countDown: 8,
       timer: null,
@@ -60,7 +63,7 @@ const app = Vue.createApp({
         //  'Vue 3.1 正式版发布',
          'Vue 3.3 beta版发布',
          'Vue 2.x vs Vue 3.x', 
-         'Nodejs 18x 開發', 
+        //  'Nodejs 18x 開發', 
          'React 16.8 正式版发布',
       ],
       
@@ -69,7 +72,24 @@ const app = Vue.createApp({
     };
   },
 
-computed: {
+  computed: {
+    // newBlog: {
+    //   get() {
+    //     return this.newBlogPost;
+    //   },
+    //   set(value) {
+    //     this.newBlogPost = value;
+    //     console.log('newBlogPost數據發生了變化');
+    //     // 模擬耗時操作
+    //     setTimeout(() => {
+    //       this.blogsCount += 1;
+    //       this.blogPosts.push(value);
+    //     }, 2000);
+    //   }
+    // },
+    getBlogsCount() {
+      return this.blogPosts.length;
+    },
     vueBlogs() {
       console.log('調用了vueBlogs計算屬性');
       return this.blogPosts.filter((post) => post.toLowerCase().includes('vue'));
@@ -91,6 +111,20 @@ computed: {
   },
 
   methods: {
+    handleSubmit(e) {
+      // e.preventDefault();
+      console.log('Submitted!');
+      console.log(this.userName);
+      console.log(this.userEmail); 
+    },
+    addBlogPost() {
+      setTimeout(() => {
+        this.blogPosts.push(this.newBlogPost);
+      }, 2000);
+    },
+    handleButtonClick() {
+      this.newBlogPost = 'Vue 3.x ' + Math.random();
+    },
     toggleAnswer() {
       this.showAnswer = !this.showAnswer;
     },
@@ -126,13 +160,20 @@ computed: {
     //   },
     //   deep: true,
     // },
-    newBlog(newVal, oldVal) {
-      console.log('newBlog數據發生了變化');
+
+    // newBlog(newVal, oldVal) {
+    //   console.log('newBlog數據發生了變化');
+    //   // 模擬耗時操作
+    //   setTimeout(() => {
+    //     this.blogsCount += 1;
+    //     this.blogPosts.push(newVal);
+    //   }, 3000);
+    // },
+
+    newBlogPost(newVal, oldVal) {
+      console.log('newBlogPost數據發生了變化');
       // 模擬耗時操作
-      setTimeout(() => {
-        this.blogsCount += 1;
-        this.blogPosts.push(newVal);
-      }, 3000);
+      this.addBlogPost();
     },
   }
 
