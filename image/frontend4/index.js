@@ -53,9 +53,11 @@ const app = Vue.createApp({
       ],
       todos: [
         { id: 1, content: '看賈伯斯傳', complete: true },
-        { id: 2, content: 'Buy eggs', complete: false },
-        { id: 3, content: 'Buy bread', complete: true },
+        { id: 2, content: '配置k8s', complete: false },
+        { id: 3, content: '在AWS配置3 Tier App 架構', complete: true },
         { id: 4, content: '把項目做完', complete: false },
+        { id: 5, content: '重新深入複習Vue3', complete: false },
+        { id: 6, content: '深入LCEL', complete: false },
       ],
       // books: [
       //   '賈伯斯傳',
@@ -124,6 +126,12 @@ const app = Vue.createApp({
   },
 
   methods: {
+    showLiContent(liContent) {
+      alert(liContent)
+    },
+    handleClick(id, e) {
+     alert(id + ', ' + e.clientX + ' ' + e.clientY); 
+    },
     handleChange() {
       console.log('input 變化了');
     },

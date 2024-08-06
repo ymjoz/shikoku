@@ -15,6 +15,15 @@
     <p>
       事件傳參與多事件處理函數
     </p>
+    <hr>
+    <br><br>
+    <ul>
+      <li v-for="todo in todos" 
+      :key="todo.id" 
+      @click="handleClick(todo.id, $event), showLiContent(todo.content)">
+      {{ todo.content }}
+      </li>
+    </ul>
  </div> 
  <script src="index.js"></script>
 </body>
