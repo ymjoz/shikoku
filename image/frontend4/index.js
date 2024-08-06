@@ -18,7 +18,7 @@ const app = Vue.createApp({
   data() {
     return {
       currentCount: 0,
-      countDown: 5,
+      countDown: 8,
       timer: null,
       showAnswer: false,
       rossiValue: getRandomNumber(8),
@@ -102,7 +102,7 @@ computed: {
   watch: {
     showAnswer(newVal, oldVal) {
       if (newVal) {
-        this.countDown = 5;
+        this.countDown = 8;
         if (this.timer) {
           clearInterval(this.timer);
           this.timer = null;
