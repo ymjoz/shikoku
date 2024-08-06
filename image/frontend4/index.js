@@ -17,6 +17,15 @@ const app = Vue.createApp({
 
   data() {
     return {
+      myBlogPost: {
+        title: "Vue 3.x 完全指南",
+        author: "CSW",
+        pubDate: "2021-09-01",
+      },
+      attr: "placeholder",
+      inputValue: "輸入一些字串",
+      event: "change",
+
       userName: "",
       userEmail: "",
       newBlog: "", // 使用watch監聽
@@ -114,6 +123,9 @@ const app = Vue.createApp({
   },
 
   methods: {
+    handleChange() {
+      console.log('input 變化了');
+    },
     addmylists() {
       this.mylists.push(this.mylists.length + 1);
     },

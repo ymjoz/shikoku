@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3"></script>
+  <title>lesson u.34</title>
+</head>
+<body>
+ <div id="app">
+    <h1><a href="index.html" class="no-underline">
+      陳詩偉の小站 {{ rossiValue }}
+    </a></h1>
+    <p>
+      再看 v-for 指令 
+    </p>
+    <hr>
+    <ul>
+      <!-- 順序是固定的: 第1個屬性值、第2個屬性名、第3個是索引 -->
+      <li v-for="(value, name, index) in myBlogPost">{{ index }}, {{ name }} - {{ value }}</li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="todo in todos" :key="todo.id">{{ todo.content }}</li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="n in 5">{{ n }}</li>
+    </ul>
+ </div> 
+ <script src="index.js"></script>
+</body>
+</html>
