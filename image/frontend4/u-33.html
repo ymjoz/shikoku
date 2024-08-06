@@ -15,8 +15,22 @@
     <p>
       給v-bind和v-on配置動態參數
     </p>
+    <br>
     <hr>
     <input type="text" :[attr]="inputValue" @[event]="handleChange">
+    <hr>
+    <br>
+    <p>
+      測試 template element
+      lesson u.35
+    </p>
+    <button @click="show = !show">切換顯示</button>
+    <template v-if="show">
+      <h2>這是一個 template element</h2>
+      <p>這是一個段落</p>
+      <p>lesson u.35</p>
+    </template>
+
   </div>
   <script src="index.js"></script>
 </body>

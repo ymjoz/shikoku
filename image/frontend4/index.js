@@ -17,6 +17,7 @@ const app = Vue.createApp({
 
   data() {
     return {
+      show: false,
       myBlogPost: {
         title: "Vue 3.x 完全指南",
         author: "CSW",
