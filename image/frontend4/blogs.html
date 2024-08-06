@@ -17,11 +17,14 @@
 
   <div class="question">
     <ul>
+      <!-- 使用計算屬性 -->
       <li v-for="vueBlog in vueBlogs">{{ vueBlog }}</li>
+       <!-- 使用方法methods -->
       <!-- <li v-for="vueBlog in getVueBlogs()">{{ vueBlog }}</li> -->
     </ul>
-    <!-- <button @click="currentCount +=1 ">計數器 {{ currentCount }}</button> -->
-    <button @click="blogPosts.push('vue計算屬性與方法的區別'); currentCount += 1;">計數器 {{ currentCount }}</button>
+    <!-- 計算屬性依賴的data屬性變化時(例如blogPosts)，才會重新調用計算屬性函數 -->
+    <button @click="currentCount +=1 ">計數器 {{ currentCount }}</button>
+    <!-- <button @click="blogPosts.push('vue計算屬性與方法的區別'); currentCount += 1;">計數器 {{ currentCount }}</button> -->
   </div>
 </div>  
 <script src="index.js"></script>

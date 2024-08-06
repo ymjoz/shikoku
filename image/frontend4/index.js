@@ -17,6 +17,8 @@ const app = Vue.createApp({
 
   data() {
     return {
+      newBlog: "", // 使用watch監聽
+      blogsCount: 4,
       currentCount: 0,
       countDown: 8,
       timer: null,
@@ -55,11 +57,11 @@ const app = Vue.createApp({
         { id: 4, title: 'JavaScript高級程序設計', price: 100 },
       ],
       blogPosts: [
-         'Vue 3.1 正式版发布',
+        //  'Vue 3.1 正式版发布',
          'Vue 3.3 beta版发布',
          'Vue 2.x vs Vue 3.x', 
          'Nodejs 18x 開發', 
-         'React 18 正式版发布'
+         'React 16.8 正式版发布',
       ],
       
       
@@ -94,7 +96,7 @@ computed: {
     },
     getVueBlogs() {
       // 每次click button都會執行
-      console.log('getVueBlogs被調用');
+      console.log('方法: getVueBlogs()被調用');
       return this.blogPosts.filter((post) => post.toLowerCase().includes('react'));
     }
   },
@@ -116,7 +118,22 @@ computed: {
           }
         }, 1000);
       }
-    }
+    },
+    // blogPosts: {
+    //   handler(newVal, oldVal) {
+    //     console.log('blogPosts數據發生了變化');
+    //     this.blogsCount = newVal.length;
+    //   },
+    //   deep: true,
+    // },
+    newBlog(newVal, oldVal) {
+      console.log('newBlog數據發生了變化');
+      // 模擬耗時操作
+      setTimeout(() => {
+        this.blogsCount += 1;
+        this.blogPosts.push(newVal);
+      }, 3000);
+    },
   }
 
 })
