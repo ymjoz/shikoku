@@ -22,7 +22,7 @@ select {
   margin-left: 8px;
   outline: none;
   background: hsl(280deg, 50%, 30%, 0.2);
-  color: white;
+  color: darkblue;
 }
 
 form {
