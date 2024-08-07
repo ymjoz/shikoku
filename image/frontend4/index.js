@@ -1,36 +1,33 @@
-
 // 定義一個函數來生成隨機8位數字
 function getRandomNumber(length) {
-    let result = '';
-    const characters = '0123456789';
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
+  let result = '';
+  const characters = '0123456789';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
 }
 
-
-
+let test = 'aaa';
 
 const app = Vue.createApp({
-
   data() {
     return {
       show: false,
       myBlogPost: {
-        title: "Vue 3.x 完全指南",
-        author: "CSW",
-        pubDate: "2021-09-01",
+        title: 'Vue 3.x 完全指南',
+        author: 'CSW',
+        pubDate: '2021-09-01',
       },
-      attr: "placeholder",
-      inputValue: "輸入一些字串",
-      event: "change",
+      attr: 'placeholder',
+      inputValue: '輸入一些字串',
+      event: 'change',
 
-      userName: "",
-      userEmail: "",
-      newBlog: "", // 使用watch監聽
-      newBlogPost: "",
+      userName: '',
+      userEmail: '',
+      newBlog: '', // 使用watch監聽
+      newBlogPost: '',
       blogsCount: 0,
       currentCount: 0,
       countDown: 8,
@@ -73,16 +70,13 @@ const app = Vue.createApp({
       ],
       blogPosts: [
         //  'Vue 3.1 正式版发布',
-         'Vue 3.3 beta版发布',
-         'Vue 2.x vs Vue 3.x', 
-        //  'Nodejs 18x 開發', 
-         'React 16.8 正式版发布',
+        'Vue 3.3 beta版发布',
+        'Vue 2.x vs Vue 3.x',
+        //  'Nodejs 18x 開發',
+        'React 16.8 正式版发布',
       ],
-      mylists: [
-        1, 2, 3
-      ],
-      
-      
+      mylists: [1, 2, 3],
+
       searchTerm: '',
     };
   },
@@ -107,8 +101,9 @@ const app = Vue.createApp({
     },
     vueBlogs() {
       console.log('調用了vueBlogs計算屬性');
-      return this.blogPosts.filter((post) => post.toLowerCase().includes('vue'));
-
+      return this.blogPosts.filter((post) =>
+        post.toLowerCase().includes('vue')
+      );
     },
     filteredPlaylist() {
       if (this.searchTerm) {
@@ -126,11 +121,19 @@ const app = Vue.createApp({
   },
 
   methods: {
+    handleUlClick() {
+      console.log('ul被點擊了');
+      alert(0);
+    },
+    handleLiClick() {
+      console.log('li被點擊了');
+      alert(1);
+    },
     showLiContent(liContent) {
-      alert(liContent)
+      alert(liContent);
     },
     handleClick(id, e) {
-     alert(id + ', ' + e.clientX + ' ' + e.clientY); 
+      alert(id + ', ' + e.clientX + ' ' + e.clientY);
     },
     handleChange() {
       console.log('input 變化了');
@@ -142,7 +145,7 @@ const app = Vue.createApp({
       // e.preventDefault();
       console.log('Submitted!');
       console.log(this.userName);
-      console.log(this.userEmail); 
+      console.log(this.userEmail);
     },
     addBlogPost() {
       setTimeout(() => {
@@ -158,8 +161,10 @@ const app = Vue.createApp({
     getVueBlogs() {
       // 每次click button都會執行
       console.log('方法: getVueBlogs()被調用');
-      return this.blogPosts.filter((post) => post.toLowerCase().includes('react'));
-    }
+      return this.blogPosts.filter((post) =>
+        post.toLowerCase().includes('react')
+      );
+    },
   },
 
   watch: {
@@ -202,10 +207,7 @@ const app = Vue.createApp({
       // 模擬耗時操作
       this.addBlogPost();
     },
-  }
-
-})
-
+  },
+});
 
 app.mount('#app');
-
