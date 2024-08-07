@@ -140,7 +140,19 @@ const app = Vue.createApp({
       );
       // const response = await fetch('./posts.json');
       const postsData = await response.json();
-      this.allPosts = postsData.slice(0, 5);
+      // this.allPosts = postsData.slice(0, 5);
+
+      // 隨機選取 3 筆資料
+      const randomPosts = [];
+      const indices = new Set();
+      while (indices.size < 3) {
+        const randomIndex = Math.floor(Math.random() * postsData.length);
+        indices.add(randomIndex);
+      }
+      indices.forEach((index) => randomPosts.push(postsData[index]));
+
+      // console.log(randomPosts);
+      this.allPosts = randomPosts;
     },
     addComment() {
       this.comments.push(this.postContent);
