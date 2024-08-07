@@ -14,6 +14,7 @@ let test = 'aaa';
 const app = Vue.createApp({
   data() {
     return {
+      allPosts: [],
       helloMsg: '你好',
       helloName: 'CSW',
       comments: ['很好', '不錯', '加油'],
@@ -128,7 +129,19 @@ const app = Vue.createApp({
     },
   },
 
+  created() {
+    this.fetchPosts();
+  },
+
   methods: {
+    async fetchPosts() {
+      const response = await fetch(
+        'https://jsonplaceholder.typicode.com/posts'
+      );
+      // const response = await fetch('./posts.json');
+      const postsData = await response.json();
+      this.allPosts = postsData.slice(0, 5);
+    },
     addComment() {
       this.comments.push(this.postContent);
       this.postContent = '';
