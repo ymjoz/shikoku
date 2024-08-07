@@ -48,7 +48,21 @@ button {
 p {
   padding: 8px 0;
   background: hsl(240deg, 50%, 30%, 0.2);
-  /* text-decoration: underline; */
+  margin: 12px 0;
+}
+
+ul {
+  margin: 12px 0;
+  border: 1px solid hsl(240deg, 50%, 50%);
+  padding: 24px;
+}
+input {
+  padding: 8px 14px;
+  border: 1px solid hsl(280deg, 50%, 50%);
+  border-radius: 4px;
+  outline: none;
+  background: hsl(280deg, 50%, 30%, 0.2);
+  color: white;
 }
 
 #app {

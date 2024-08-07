@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>lesson u.38</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>
+        <a href="index.html" class="no-underline">
+          陳詩偉の小站 {{ rossiValue }}
+        </a>
+      </h1>
+      <p>處理鍵盤滑鼠事件的修飾符</p>
+      <input
+        type="text"
+        v-model="postContent"
+        @keyup.ctrl.enter.exact="addComment"
+        placeholder="輸入你的content"
+      />
+      <ul @mousedown.right="comments.reverse()">
+        <li v-for="mycontent in comments">{{ mycontent }}</li>
+      </ul>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

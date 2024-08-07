@@ -14,6 +14,8 @@ let test = 'aaa';
 const app = Vue.createApp({
   data() {
     return {
+      comments: ['很好', '不錯', '加油'],
+      postContent: '',
       show: false,
       myBlogPost: {
         title: 'Vue 3.x 完全指南',
@@ -121,6 +123,10 @@ const app = Vue.createApp({
   },
 
   methods: {
+    addComment() {
+      this.comments.push(this.postContent);
+      this.postContent = '';
+    },
     handleUlClick() {
       console.log('ul被點擊了');
       alert(0);
