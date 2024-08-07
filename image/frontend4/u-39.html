@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>lesson u.39</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>
+        <a href="index.html" class="no-underline">
+          陳詩偉の小站 {{ rossiValue }}
+        </a>
+      </h1>
+      <p>處理表單輸入相關的修飾符</p>
+      <input
+        type="text"
+        v-model.lazy.trim="postContent"
+        placeholder="使用model.lazy"
+      />
+      <p>{{ postContent }}</p>
+      <input type="text" v-model.number="thisYear" />
+      <p>{{ typeof thisYear }}</p>
+      <hr />
+      <p>{{ helloMsg}} {{ helloName}}</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

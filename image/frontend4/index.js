@@ -14,8 +14,11 @@ let test = 'aaa';
 const app = Vue.createApp({
   data() {
     return {
+      helloMsg: '你好',
+      helloName: 'CSW',
       comments: ['很好', '不錯', '加油'],
       postContent: '',
+      thisYear: 2024,
       show: false,
       myBlogPost: {
         title: 'Vue 3.x 完全指南',
@@ -84,6 +87,9 @@ const app = Vue.createApp({
   },
 
   computed: {
+    greetings() {
+      return `${this.helloMsg}, ${this.helloName}`;
+    },
     // newBlog: {
     //   get() {
     //     return this.newBlogPost;
@@ -216,4 +222,4 @@ const app = Vue.createApp({
   },
 });
 
-app.mount('#app');
+const vm = app.mount('#app');
