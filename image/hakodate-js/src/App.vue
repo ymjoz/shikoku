@@ -1,10 +1,14 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router'
+  // import { RouterLink, RouterView } from 'vue-router'
   import HelloWorld from './components/HelloWorld.vue'
+  import WordCount from './components/WordCount.vue';
+  import MessageItem from './components/MessageItem.vue';
+  import PropTypes from './components/PropTypes.vue';
+  import MessageList from './components/MessageList.vue';
 </script>
 
 <template>
-  <header>
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -18,10 +22,48 @@
     </div>
   </header>
 
-  <RouterView />
+  <RouterView /> -->
+
+  <!-- <HelloWorld msg="Hakodate! 函館:)" /> -->
+  <!-- <WordCount /> -->
+  <!-- <MessageItem msg="Hello, queen!" time="2021-10-10" sender="ROSSI" /> -->
+  <!-- <MessageItem msg="是那天早上的國道一嗎" time="2006-01-02" sender="QUEEN" /> -->
+  <!-- <MessageItem msg="一切都模糊了" time="2006-01-02" sender="QUEEN" /> -->
+  <!-- <PropTypes :num="1789" :bool="true" :obj="{ a: 1, b: 99, c: 123 }" :array="[1, 2, 3]" /> -->
+  <MessageList />
 </template>
 
 <style scoped>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "PingFang SC", "Microsoft Yahei", sans-serif;
+  }
+
+  body {
+    background-color: #0f141c;
+    opacity: 1;
+    background-image: radial-gradient(#212943 0.6000000000000001px,
+        #0f141c 0.6000000000000001px);
+    background-size: 12px 12px;
+    color: white;
+  }
+
+  #app {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  h1 {
+    margin-bottom: 2em;
+  }
+
+  /* 以下是原始的style配置 */
+  /* 
   header {
     line-height: 1.5;
     max-height: 100vh;
@@ -82,5 +124,5 @@
       padding: 1rem 0;
       margin-top: 1rem;
     }
-  }
+  } */
 </style>
