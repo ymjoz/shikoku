@@ -27,3 +27,28 @@ pnpm dev
 ```sh
 pnpm build
 ```
+
+## Docker image
+
+```bash
+# dev build docker image
+cd ~/shikoku/image/hakodate-js
+docker build --network=host --force-rm -t t4dk/hakodate:latest - < dockerfile-dev
+docker run --rm -it \
+    --name hakodate-dev-1 \
+    -v ~/shikoku/image/hakodate-js:/app \
+    -p 17286:5174 \
+    t4dk/hakodate \
+    sh
+
+
+```
+
+```bash
+# production build docker image
+
+cd ~/shikoku/image/hakodate-js
+docker build --network=host --force-rm -t t4dk/hakodate-img:0.0.1 -f - . < Dockerfile
+
+
+```

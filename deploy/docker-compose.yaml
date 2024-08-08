@@ -25,6 +25,7 @@ services:
       - berryuisvc
       - shikokuuisvc
       - minorsvc
+      - hakodateuisvc
 
   svc1:
     image: nginxdemos/hello:latest
@@ -131,3 +132,18 @@ services:
     volumes:
       - ../image/frontend4:/usr/share/nginx/html
     restart: always
+
+
+  # 前端docker部署
+  hakodateuisvc:
+    image: t4dk/hakodate:latest
+    restart: always
+    volumes:
+      - ../image/hakodate-js:/app
+    command: pnpm preview
+    ports:
+      - 17273:4173
+    env_file:
+      - .env
+    depends_on:
+      - skkapisvc
