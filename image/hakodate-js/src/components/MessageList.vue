@@ -52,14 +52,17 @@
     }
   })
 
-  watch([() => options.value.title, () => options.value.user.name],
-    (newVals, oldVals) => {
-      console.log(newVals, oldVals)
-    })
+  // watch([() => options.value.title, () => options.value.user.name],
+  //   (newVals, oldVals) => {
+  //     console.log(newVals, oldVals)
+  //   })
 
-  // watch(() => options.value.title, (newVal, oldVal) => {
-  //   console.log('title changed', newVal, oldVal)
-  // })
+  watch(() => options.value.title, (newVal, oldVal, onInvalidate) => {
+    console.log('title changed', newVal, oldVal)
+    onInvalidate(() => {
+      console.log('做一些清理操作。。。')
+    })
+  })
 
   // watch(() => options.value.user.name, (newVal, oldVal) => {
   //   console.log('user changed', newVal, oldVal)
