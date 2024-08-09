@@ -17,7 +17,8 @@ services:
       - ./user_conf.d:/etc/nginx/user_conf.d
     depends_on:
       - svc1
-      # - svc2
+      - svc2
+      - hakodateuisvc
       # - mongo
       # - mongo-express
       # - skkapisvc
@@ -25,7 +26,6 @@ services:
       # - berryuisvc
       # - shikokuuisvc
       # - minorsvc
-      # - hakodateuisvc
 
   svc1:
     image: nginxdemos/hello:latest
@@ -145,5 +145,5 @@ services:
       - 17273:4173
     env_file:
       - .env
-    depends_on:
-      - skkapisvc
+    # depends_on:
+    #   - skkapisvc
