@@ -17,3 +17,12 @@ docker run --rm -it \
 
 
 ```
+
+### production-stage: build docker image
+
+```bash
+cd ~/shikoku/image/frontend2
+docker build --network=host --force-rm -t t4dk/berryui-img:0.0.1 -f - . < Dockerfile
+
+
+```

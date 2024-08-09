@@ -16,16 +16,16 @@ services:
       - ./letsencrypt:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
     depends_on:
-      - mongo
-      - mongo-express
-      - skkapisvc
-      - skkuisvc
       - svc1
-      - svc2
-      - berryuisvc
-      - shikokuuisvc
-      - minorsvc
-      - hakodateuisvc
+      # - svc2
+      # - mongo
+      # - mongo-express
+      # - skkapisvc
+      # - skkuisvc
+      # - berryuisvc
+      # - shikokuuisvc
+      # - minorsvc
+      # - hakodateuisvc
 
   svc1:
     image: nginxdemos/hello:latest

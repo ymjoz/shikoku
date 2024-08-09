@@ -13,14 +13,14 @@
 
 
 # build stage
-FROM node:21-bullseye-slim as build-stage
+FROM node:21-bullseye-slim AS build-stage
 WORKDIR /app
 COPY ./ .
 RUN sed -i 's/VITE_API_URL=.*/VITE_API_URL=RUN_TIME_REPLACE_VITE_API_URL/g' .env
 RUN yarn install && yarn build
 
 # production stage
-FROM nginx:stable-alpine as production-stage
+FROM nginx:stable-alpine AS production-stage
 RUN mkdir /app
 COPY --from=build-stage /app/dist /app
 COPY entrypoint.sh /usr/share/nginx/
