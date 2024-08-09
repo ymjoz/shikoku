@@ -18,10 +18,10 @@ services:
     depends_on:
       - svc1
       - svc2
-      - hakodateuisvc
-      # - mongo
-      # - mongo-express
-      # - skkapisvc
+      - mongo
+      - mongo-express
+      - skkapisvc
+      # - hakodateuisvc
       # - skkuisvc
       # - berryuisvc
       # - shikokuuisvc
@@ -65,7 +65,7 @@ services:
       - mongo
 
   skkapisvc:
-    image: tom4dock/shikoku-platform-api:0.0.1-src
+    image: t4dk/shikoku-api:0.0.1-src
     restart: always
     volumes:
       - ./info_images:/app/app/static/info_images
@@ -82,7 +82,7 @@ services:
 
   # 前端docker部署
   skkuisvc:
-    image: tom4dock/skkui:latest
+    image: t4dk/skkui:latest
     restart: always
     volumes:
       - ../image/frontend:/app
@@ -96,7 +96,7 @@ services:
 
   # 前端docker部署
   berryuisvc:
-    image: tom4dock/berryui:latest
+    image: t4dk/berryui:latest
     restart: always
     volumes:
       - ../image/frontend2:/app
@@ -110,7 +110,7 @@ services:
 
   # 前端docker部署
   shikokuuisvc:
-    image: tom4dock/shikokuui:latest
+    image: t4dk/shikokuui:latest
     restart: always
     volumes:
       - ../image/frontend3:/app
@@ -145,5 +145,5 @@ services:
       - 17273:4173
     env_file:
       - .env
-    # depends_on:
-    #   - skkapisvc
+    depends_on:
+      - skkapisvc

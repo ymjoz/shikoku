@@ -9,13 +9,13 @@ Make sure to install the dependencies:
 ```bash
 # build docker image
 cd ~/shikoku/image/frontend
-docker build --network=host --force-rm -t tom4dock/skkui:latest - < dockerfile-dev
-docker build --network=host --force-rm -t tom4dock/skkui-img:0.0.1 -f - . < Dockerfile            
+docker build --network=host --force-rm -t t4dk/skkui:latest - < dockerfile-dev
+docker build --network=host --force-rm -t t4dk/skkui-img:0.0.1 -f - . < Dockerfile
 docker run --rm -it \
     --name skkui-dev-1 \
     -v ~/shikoku/image/frontend:/app \
     -p 17281:3001 \
-    tom4dock/skkui \
+    t4dk/skkui \
     sh
 
 
