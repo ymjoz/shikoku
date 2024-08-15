@@ -1,7 +1,7 @@
 
 # 使用官方的 Node.js 镜像作为基础镜像
 # FROM node:22-alpine AS build
-FROM node:22-bullseye-slim AS build-stage
+FROM node:22-bullseye-slim AS build
 
 # 设置工作目录
 WORKDIR /app
@@ -23,7 +23,7 @@ RUN pnpm build
 
 # 使用 Nginx 作为基础镜像来提供静态文件
 # FROM nginx:alpine
-FROM nginx:stable-alpine AS production-stage
+FROM nginx:alpine AS production
 
 # 复制构建输出的文件到 Nginx 容器中的 /usr/share/nginx/html 目录
 COPY --from=build /app/dist /usr/share/nginx/html
