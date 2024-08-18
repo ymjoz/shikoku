@@ -24,8 +24,8 @@ services:
       - hakodateuisvc
       # - skkuisvc
       # - berryuisvc
-      # - shikokuuisvc
-      # - minorsvc
+      - shikokuuisvc
+      - minorsvc
 
   svc1:
     image: nginxdemos/hello:latest
