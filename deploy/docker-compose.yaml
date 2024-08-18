@@ -21,7 +21,7 @@ services:
       - mongo
       - mongo-express
       - skkapisvc
-      # - hakodateuisvc
+      - hakodateuisvc
       # - skkuisvc
       # - berryuisvc
       # - shikokuuisvc
@@ -47,8 +47,8 @@ services:
     ports:
       - 38018:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: hello99_password
+      MONGO_INITDB_ROOT_USERNAME: ${MGO_ROOT} 
+      MONGO_INITDB_ROOT_PASSWORD: ${MGO_PASSWD} 
 
   mongo-express:
     image: mongo-express
@@ -56,11 +56,11 @@ services:
     ports:
       - 8089:8081
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
-      ME_CONFIG_MONGODB_ADMINPASSWORD: hello99_password
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: hello99_password
-      ME_CONFIG_MONGODB_URL: mongodb://admin:hello99_password@mongo:27017/
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MGO_ROOT} 
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MGO_PASSWD} 
+      ME_CONFIG_BASICAUTH_USERNAME: ${MGO_ROOT} 
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MGO_PASSWD} 
+      ME_CONFIG_MONGODB_URL: mongodb://${MGO_ROOT}:${MGO_PASSWD}@mongo:27017/
     depends_on:
       - mongo
 
@@ -73,7 +73,7 @@ services:
     ports:
       - 31244:80
     environment:
-      MONGODB_URI: mongodb://admin:hello99_password@mongo:27017/
+      MONGODB_URI: mongodb://${MGO_ROOT}:${MGO_PASSWD}@mongo:27017/
       DOCS_URL: /docs
       OPENAPI_URL: /openapi.json
       LOG_LEVEL: debug

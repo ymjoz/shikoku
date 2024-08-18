@@ -2,3 +2,5 @@ mongodata/
 info_images/
 certbot/
 letsencrypt/
+
+.env.sit

@@ -5,6 +5,7 @@
   import MessageItem from './components/MessageItem.vue';
   import PropTypes from './components/PropTypes.vue';
   import MessageList from './components/MessageList.vue';
+  import MsgList from './components/MsgList.vue';
 </script>
 
 <template>
@@ -32,7 +33,8 @@
   <!-- <MessageItem msg="是那天早上的國道一嗎" time="2006-01-02" sender="QUEEN" /> -->
   <!-- <MessageItem msg="一切都模糊了" time="2006-01-02" sender="QUEEN" /> -->
   <!-- <PropTypes :num="1789" :bool="true" :obj="{ a: 1, b: 99, c: 123 }" :array="[1, 2, 3]" /> -->
-  <MessageList />
+  <!-- <MessageList /> -->
+  <MsgList />
 </template>
 
 <style scoped>
